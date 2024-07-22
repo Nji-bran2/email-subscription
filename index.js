@@ -2,10 +2,13 @@ require("dotenv").config()
 var express = require('express');
 var app = express();
 const path = require('path');
+const cors = require('cors');
 //Body parser used to parse the request body
 var bodyParser = require('body-parser');
 var knex = require('./db/db');
 var subscribe = require('./subscribe');
+
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
